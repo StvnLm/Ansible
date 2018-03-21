@@ -1,0 +1,10 @@
+---
+- name: playbook that fetches a file
+  hosts: Demo
+  remote_user: cumulus
+  become: yes
+  become_method: sudo
+  tasks:
+  - fetch:
+      src: /etc/frr/daemons
+      dest: /etc/ansible/playbooks/fetched_files
